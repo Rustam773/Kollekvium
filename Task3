@@ -1,0 +1,20 @@
+def find_second_largest(numbers):
+    if len(numbers) < 2:
+        return None 
+
+    largest = None
+    second_largest = None
+
+    for number in numbers:
+        if largest is None or number > largest:
+            second_largest = largest  
+            largest = number  
+        elif number != largest: 
+            if second_largest is None or number > second_largest:
+                second_largest = number  
+
+    return second_largest
+
+numbers = [3, 1, 4, 7, 5, 2]
+second_largest = find_second_largest(numbers)
+print("Second large number", second_largest)
